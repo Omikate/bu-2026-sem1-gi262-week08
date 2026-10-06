@@ -12,7 +12,8 @@ public class DialogueSequen : MonoBehaviour
     {
         // ตรวจสอบ UI และตั้งค่า
         // 1. call LoadConversation() to set up the dialogue tree
-
+        LoadConversations();
+        dialogueUI = GetComponent<NPC>().dialogueUI;
 
         // 2. set the current node to the root of the tree and print its contents
 
@@ -57,6 +58,14 @@ public class DialogueSequen : MonoBehaviour
 
         // Build the tree, adding custom responses
         // 4. Build the tree, adding custom responses ...
+
+        greeting.AddNext(askForQuest, "Can you give me a quest?");
+        greeting.AddNext(directionsVillage, "Where is the village?");
+        greeting.AddNext(directionsForest, "How do I get to the forest?");
+        greeting.AddNext(goodbye, "Goodbye.");
+
+        askForQuest.AddNext(questDenied, "I'm ready for anything!");
+        askForQuest.AddNext(goodbye, "Maybe later.");
 
         // [1] add greeting's next node: askForQuest, with text: "Can you give me a quest?"
 
