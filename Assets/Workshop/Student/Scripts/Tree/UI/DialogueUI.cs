@@ -22,6 +22,7 @@ public class DialogueUI : MonoBehaviour
         //1. Set Dialogue Sequen
         InteractNpcSequen = sequen;
         DialogueNode currentNode = InteractNpcSequen.tree.root;
+        sequen.currentNode = currentNode;
         ShowDialogue(currentNode);
 
         //Show UI
@@ -40,7 +41,7 @@ public class DialogueUI : MonoBehaviour
         ClearChoices();
         // 5. สร้างปุ่มตัวเลือกใหม่ตาม nexts
         var choices = new List<string> (node.nexts.Keys);
-        for (int i = 0; i < activeButtons.Count; i++)
+        for (int i = 0; i < choices.Count; i++)
         {
             string choiceText = choices[i];
             CreateChoiceButton(choiceText, i);

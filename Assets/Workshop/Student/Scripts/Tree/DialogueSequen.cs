@@ -67,6 +67,8 @@ public class DialogueSequen : MonoBehaviour
         askForQuest.AddNext(questDenied, "I'm ready for anything!");
         askForQuest.AddNext(goodbye, "Maybe later.");
 
+        tree = new DialogueTree(greeting);  
+
         // [1] add greeting's next node: askForQuest, with text: "Can you give me a quest?"
 
         // [2] add greeting's next node: directionsVillage, with text: "Where is the village?" 

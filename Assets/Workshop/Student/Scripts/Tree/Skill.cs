@@ -33,6 +33,7 @@ public class Skill
         {
             // 3. if the skill is already unlocked, log message and return
             Debug.Log($"Skill {name} is already unlocked");
+            return;
         }
 
         // 4. set isUnlocked to true
